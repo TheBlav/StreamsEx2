@@ -15,7 +15,7 @@ public class SoccerMatch {
         this.guestTeamScore = guestTeamScore;
     }
 
-    public String getHomeTeamName() {
+    public  String getHomeTeamName() {
         return homeTeamName;
     }
 
@@ -63,11 +63,7 @@ public class SoccerMatch {
     @Override
     public String
     toString() {
-        return "SoccerMatch{" +
-                "homeTeamName='" + homeTeamName + '\'' +
-                ", guestTeamName='" + guestTeamName + '\'' +
-                ", homeTeamScore=" + homeTeamScore +
-                ", guestTeamScore=" + guestTeamScore +
-                '}';
+        return homeTeamName + " : " + guestTeamName
+                + " (" + homeTeamScore + ":" + guestTeamScore + ")";
     }
 }
