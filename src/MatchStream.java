@@ -24,11 +24,11 @@ public class MatchStream {
     }
 
     private static Set<String> getAllNames(SoccerMatch[] matches) {
-        String[] guestNames = (String[]) Stream.of(matches).map(SoccerMatch::getGuestTeamName).toArray();
-        String[] homeNames = (String[]) Stream.of(matches).map(SoccerMatch::getHomeTeamName).toArray();
+        String[] guestNames = Stream.of(matches).map(SoccerMatch::getGuestTeamName).toArray(String[]::new);
+        String[] homeNames = Stream.of(matches).map(SoccerMatch::getHomeTeamName).toArray(String[]::new);
         Set<String> collect = Stream.of(guestNames, homeNames)
                 .flatMap(Arrays::stream)
-                .collect(Collectors.toSet(HashSet<String>::new));
+                .collect(Collectors.toSet());
         return collect;
     }
 
